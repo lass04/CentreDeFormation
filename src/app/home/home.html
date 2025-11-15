@@ -1,0 +1,51 @@
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm rounded">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center fw-bold text-primary">
+      
+      <span class="fs-4 fw-bold" style="color: #1E3A8A; letter-spacing: 1px;font-family: Cambria;">ISETR- Formations</span>
+
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;" [routerLink]="['/home']">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;" [routerLink]="['/public-space/formationrech']">Formations</a>
+        </li>
+        <!--@if (!Logged) {
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;" [routerLink]="['/auth']">Login</a>
+        </li>}
+        @else {
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;" (click)="logout()">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;color:green" >Connected</a>
+        </li>
+    }-->
+      </ul>
+        
+    </div>
+  </div>
+</nav>
+<br><br>
+<h1 style="color:#1E3A8A;font-family: Cambria;margin-left: 10px;">Présentation : </h1>
+<i><p style="margin-left: 10px;">Ce site est dédié aux étudiants d'ISET RADES souhaitant apprendre,évoluer <br>et acquérir
+  de nouvelles compétences dans divers domaines de formation <br>professionnelle.
+</p></i>
+<h1 style="color:#1E3A8A;font-family: Cambria;margin-left: 10px;">Catégories : </h1>
+<ul>
+@for (categorie of categories; track categorie) {
+   <li><a [routerLink]="['/']">{{categorie}}</a></li>
+}
+</ul>

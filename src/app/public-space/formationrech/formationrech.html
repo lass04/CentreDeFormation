@@ -1,0 +1,22 @@
+<a [routerLink]="['/']" class="position-fixed top-0 end-0 m-3">
+    <button class="button shadow rounded-pill px-3 py-2" style="background-color:#1E3A8A;color:white;font-weight:bold">
+      Acceuil
+    </button>
+  </a>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<h1 class="center" style="color:#1E3A8A;font-family:Cambria;margin-top: 100px;">Rechercher une Formation</h1>
+<div class="container" style="margin-top: 100px;">
+    <input class="border" style="color:#1E3A8A;" color="black" placeholder="Rechercher" #input (keyup)="Search(input.value)">
+</div>
+
+<div class="container">
+    <div class="collection">
+      
+      <a *ngFor="let formation of formations ">
+      <a class="btn" style="background-color:#1E3A8A;margin-bottom: 10px;">
+          {{formation}}
+      </a><br>
+      </a>
+    </div>
+</div>
+

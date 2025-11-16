@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../data-service';
 import { Formation } from '../../interfaces/formation';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-formationrech',
@@ -12,6 +13,7 @@ import { Formation } from '../../interfaces/formation';
 })
 export class Formationrech implements OnInit{
 
+  pristine:boolean=true;
   formations:Formation[]=[];
   constructor(private dataSvc : DataService){}
 
@@ -20,6 +22,7 @@ export class Formationrech implements OnInit{
   }
 
   Search(formation:string){
+    this.pristine=false;
     this.formations=this.dataSvc.GetFormationByKeyword(formation.toLowerCase());
   }
 }

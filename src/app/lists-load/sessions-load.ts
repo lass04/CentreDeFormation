@@ -8,8 +8,8 @@ export const sessions: Session[] = [
   
   {
     id: 1,
-    date_debut: new Date('2025-01-10'),
-    date_fin: new Date('2025-01-15'),
+    date_debut: '2026-01-10',
+    date_fin: '2026-01-15',
     formateur: formateurs[0],
     formation: formations[0],
     nbre_inscrits: 15,
@@ -17,8 +17,8 @@ export const sessions: Session[] = [
   },
   {
     id: 2,
-    date_debut: new Date('2025-02-05'),
-    date_fin: new Date('2025-02-10'),
+    date_debut: '2026-02-05',
+    date_fin: '2026-02-10',
     formateur: formateurs[1],
     formation: formations[0],
     nbre_inscrits: 12,
@@ -28,8 +28,8 @@ export const sessions: Session[] = [
   
   {
     id: 3,
-    date_debut: new Date('2025-03-01'),
-    date_fin: new Date('2025-03-07'),
+    date_debut: '2026-03-01',
+    date_fin: '2026-03-07',
     formateur: formateurs[2],
     formation: formations[1],
     nbre_inscrits: 20,
@@ -37,8 +37,8 @@ export const sessions: Session[] = [
   },
   {
     id: 4,
-    date_debut: new Date('2025-04-10'),
-    date_fin: new Date('2025-04-16'),
+    date_debut: '2026-04-10',
+    date_fin: '2026-04-16',
     formateur: formateurs[3],
     formation: formations[1],
     nbre_inscrits: 18,
@@ -48,8 +48,8 @@ export const sessions: Session[] = [
   
   {
     id: 5,
-    date_debut: new Date('2025-05-05'),
-    date_fin: new Date('2025-05-12'),
+    date_debut: '2026-05-05',
+    date_fin: '2026-05-12',
     formateur: formateurs[4],
     formation: formations[2],
     nbre_inscrits: 16,
@@ -57,8 +57,8 @@ export const sessions: Session[] = [
   },
   {
     id: 6,
-    date_debut: new Date('2025-06-01'),
-    date_fin: new Date('2025-06-08'),
+    date_debut: '2026-06-01',
+    date_fin: '2026-06-08',
     formateur: formateurs[5],
     formation: formations[2],
     nbre_inscrits: 14,
@@ -68,8 +68,8 @@ export const sessions: Session[] = [
   
   {
     id: 7,
-    date_debut: new Date('2025-07-05'),
-    date_fin: new Date('2025-07-10'),
+    date_debut: '2026-07-05',
+    date_fin: '2026-07-10',
     formateur: formateurs[6],
     formation: formations[3],
     nbre_inscrits: 22,
@@ -77,8 +77,8 @@ export const sessions: Session[] = [
   },
   {
     id: 8,
-    date_debut: new Date('2025-08-01'),
-    date_fin: new Date('2025-08-06'),
+    date_debut: '2026-08-01',
+    date_fin: '2026-08-06',
     formateur: formateurs[7],
     formation: formations[3],
     nbre_inscrits: 19,
@@ -88,8 +88,8 @@ export const sessions: Session[] = [
   
   {
     id: 9,
-    date_debut: new Date('2025-09-05'),
-    date_fin: new Date('2025-09-12'),
+    date_debut: '2026-09-05',
+    date_fin: '2026-09-12',
     formateur: formateurs[0],
     formation: formations[4],
     nbre_inscrits: 17,
@@ -97,8 +97,8 @@ export const sessions: Session[] = [
   },
   {
     id: 10,
-    date_debut: new Date('2025-10-01'),
-    date_fin: new Date('2025-10-08'),
+    date_debut: '2026-10-01',
+    date_fin: '2026-10-08',
     formateur: formateurs[1],
     formation: formations[4],
     nbre_inscrits: 15,
@@ -108,8 +108,8 @@ export const sessions: Session[] = [
   
   {
     id: 11,
-    date_debut: new Date('2025-11-05'),
-    date_fin: new Date('2025-11-12'),
+    date_debut: '2026-11-05',
+    date_fin: '2026-11-12',
     formateur: formateurs[2],
     formation: formations[5],
     nbre_inscrits: 20,
@@ -117,8 +117,8 @@ export const sessions: Session[] = [
   },
   {
     id: 12,
-    date_debut: new Date('2025-12-01'),
-    date_fin: new Date('2025-12-08'),
+    date_debut: '2026-12-01',
+    date_fin: '2026-12-08',
     formateur: formateurs[3],
     formation: formations[5],
     nbre_inscrits: 18,
@@ -128,8 +128,8 @@ export const sessions: Session[] = [
   
   {
     id: 13,
-    date_debut: new Date('2026-01-05'),
-    date_fin: new Date('2026-01-12'),
+    date_debut: '2026-01-05',
+    date_fin: '2026-01-12',
     formateur: formateurs[4],
     formation: formations[6],
     nbre_inscrits: 14,
@@ -137,8 +137,8 @@ export const sessions: Session[] = [
   },
   {
     id: 14,
-    date_debut: new Date('2026-02-01'),
-    date_fin: new Date('2026-02-08'),
+    date_debut: '2026-02-01',
+    date_fin: '2026-02-08',
     formateur: formateurs[5],
     formation: formations[6],
     nbre_inscrits: 16,
@@ -148,8 +148,8 @@ export const sessions: Session[] = [
   
   {
     id: 15,
-    date_debut: new Date('2026-03-05'),
-    date_fin: new Date('2026-03-12'),
+    date_debut: '2026-03-05',
+    date_fin: '2026-03-12',
     formateur: formateurs[6],
     formation: formations[7],
     nbre_inscrits: 12,
@@ -157,8 +157,8 @@ export const sessions: Session[] = [
   },
   {
     id: 16,
-    date_debut: new Date('2026-04-01'),
-    date_fin: new Date('2026-04-08'),
+    date_debut: '2026-04-01',
+    date_fin: '2026-04-08',
     formateur: formateurs[7],
     formation: formations[7],
     nbre_inscrits: 14,
@@ -168,8 +168,8 @@ export const sessions: Session[] = [
   
   {
     id: 17,
-    date_debut: new Date('2026-05-05'),
-    date_fin: new Date('2026-05-12'),
+    date_debut: '2026-05-05',
+    date_fin: '2026-05-12',
     formateur: formateurs[0],
     formation: formations[8],
     nbre_inscrits: 18,
@@ -177,8 +177,8 @@ export const sessions: Session[] = [
   },
   {
     id: 18,
-    date_debut: new Date('2026-06-01'),
-    date_fin: new Date('2026-06-08'),
+    date_debut: '2026-06-01',
+    date_fin: '2026-06-08',
     formateur: formateurs[1],
     formation: formations[8],
     nbre_inscrits: 20,
@@ -187,8 +187,8 @@ export const sessions: Session[] = [
 
   {
     id: 19,
-    date_debut: new Date('2026-07-05'),
-    date_fin: new Date('2026-07-12'),
+    date_debut: '2026-07-05',
+    date_fin: '2026-07-12',
     formateur: formateurs[2],
     formation: formations[9],
     nbre_inscrits: 22,
@@ -196,8 +196,8 @@ export const sessions: Session[] = [
   },
   {
     id: 20,
-    date_debut: new Date('2026-08-01'),
-    date_fin: new Date('2026-08-08'),
+    date_debut: '2026-08-01',
+    date_fin: '2026-08-08',
     formateur: formateurs[3],
     formation: formations[9],
     nbre_inscrits: 19,

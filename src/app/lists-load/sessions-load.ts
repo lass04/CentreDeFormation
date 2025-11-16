@@ -12,7 +12,7 @@ export const sessions: Session[] = [
     date_fin: '2026-01-15',
     formateur: formateurs[0],
     formation: formations[0],
-    nbre_inscrits: 15,
+    nbre_inscrits: 0,
     description: "Session d'initiation à la programmation pour débutants",
   },
   {
@@ -21,7 +21,7 @@ export const sessions: Session[] = [
     date_fin: '2026-02-10',
     formateur: formateurs[1],
     formation: formations[0],
-    nbre_inscrits: 12,
+    nbre_inscrits: 0,
     description: "Deuxième session d'initiation à la programmation",
   },
 
@@ -32,7 +32,7 @@ export const sessions: Session[] = [
     date_fin: '2026-03-07',
     formateur: formateurs[2],
     formation: formations[1],
-    nbre_inscrits: 20,
+    nbre_inscrits: 0,
     description: "Session de développement web front-end",
   },
   {
@@ -41,7 +41,7 @@ export const sessions: Session[] = [
     date_fin: '2026-04-16',
     formateur: formateurs[3],
     formation: formations[1],
-    nbre_inscrits: 18,
+    nbre_inscrits: 0,
     description: "Deuxième session front-end pour débutants/intermédiaires",
   },
 
@@ -52,7 +52,7 @@ export const sessions: Session[] = [
     date_fin: '2026-05-12',
     formateur: formateurs[4],
     formation: formations[2],
-    nbre_inscrits: 16,
+    nbre_inscrits: 0,
     description: "Session back-end Node.js et gestion de bases de données",
   },
   {
@@ -61,7 +61,7 @@ export const sessions: Session[] = [
     date_fin: '2026-06-08',
     formateur: formateurs[5],
     formation: formations[2],
-    nbre_inscrits: 14,
+    nbre_inscrits: 0,
     description: "Deuxième session back-end pour développeurs intermédiaires",
   },
 
@@ -72,7 +72,7 @@ export const sessions: Session[] = [
     date_fin: '2026-07-10',
     formateur: formateurs[6],
     formation: formations[3],
-    nbre_inscrits: 22,
+    nbre_inscrits: 0,
     description: "Session SQL et bases de données relationnelles",
   },
   {
@@ -81,7 +81,7 @@ export const sessions: Session[] = [
     date_fin: '2026-08-06',
     formateur: formateurs[7],
     formation: formations[3],
-    nbre_inscrits: 19,
+    nbre_inscrits: 0,
     description: "Deuxième session SQL pour débutants",
   },
 
@@ -92,7 +92,7 @@ export const sessions: Session[] = [
     date_fin: '2026-09-12',
     formateur: formateurs[0],
     formation: formations[4],
-    nbre_inscrits: 17,
+    nbre_inscrits: 0,
     description: "Session Flutter pour le développement mobile",
   },
   {
@@ -101,7 +101,7 @@ export const sessions: Session[] = [
     date_fin: '2026-10-08',
     formateur: formateurs[1],
     formation: formations[4],
-    nbre_inscrits: 15,
+    nbre_inscrits: 0,
     description: "Deuxième session mobile multiplateforme Flutter",
   },
 
@@ -112,7 +112,7 @@ export const sessions: Session[] = [
     date_fin: '2026-11-12',
     formateur: formateurs[2],
     formation: formations[5],
-    nbre_inscrits: 20,
+    nbre_inscrits: 0,
     description: "Administration systèmes Linux",
   },
   {
@@ -121,7 +121,7 @@ export const sessions: Session[] = [
     date_fin: '2026-12-08',
     formateur: formateurs[3],
     formation: formations[5],
-    nbre_inscrits: 18,
+    nbre_inscrits: 0,
     description: "Deuxième session administration Linux",
   },
 
@@ -132,7 +132,7 @@ export const sessions: Session[] = [
     date_fin: '2026-01-12',
     formateur: formateurs[4],
     formation: formations[6],
-    nbre_inscrits: 14,
+    nbre_inscrits: 0,
     description: "Introduction à la cybersécurité",
   },
   {
@@ -141,7 +141,7 @@ export const sessions: Session[] = [
     date_fin: '2026-02-08',
     formateur: formateurs[5],
     formation: formations[6],
-    nbre_inscrits: 16,
+    nbre_inscrits: 0,
     description: "Deuxième session fondamentaux cybersécurité",
   },
 
@@ -152,7 +152,7 @@ export const sessions: Session[] = [
     date_fin: '2026-03-12',
     formateur: formateurs[6],
     formation: formations[7],
-    nbre_inscrits: 12,
+    nbre_inscrits: 0,
     description: "Intelligence artificielle et machine learning",
   },
   {
@@ -161,7 +161,7 @@ export const sessions: Session[] = [
     date_fin: '2026-04-08',
     formateur: formateurs[7],
     formation: formations[7],
-    nbre_inscrits: 14,
+    nbre_inscrits: 0,
     description: "Deuxième session IA et ML",
   },
 
@@ -172,7 +172,7 @@ export const sessions: Session[] = [
     date_fin: '2026-05-12',
     formateur: formateurs[0],
     formation: formations[8],
-    nbre_inscrits: 18,
+    nbre_inscrits: 0,
     description: "Session UX/UI design",
   },
   {
@@ -181,7 +181,7 @@ export const sessions: Session[] = [
     date_fin: '2026-06-08',
     formateur: formateurs[1],
     formation: formations[8],
-    nbre_inscrits: 20,
+    nbre_inscrits: 0,
     description: "Deuxième session design UX/UI",
   },
 
@@ -191,7 +191,7 @@ export const sessions: Session[] = [
     date_fin: '2026-07-12',
     formateur: formateurs[2],
     formation: formations[9],
-    nbre_inscrits: 22,
+    nbre_inscrits: 0,
     description: "Session réseaux informatiques",
   },
   {
@@ -200,7 +200,7 @@ export const sessions: Session[] = [
     date_fin: '2026-08-08',
     formateur: formateurs[3],
     formation: formations[9],
-    nbre_inscrits: 19,
+    nbre_inscrits: 0,
     description: "Deuxième session réseaux",
   },
 ];

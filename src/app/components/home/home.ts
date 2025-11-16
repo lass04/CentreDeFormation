@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule,Router } from '@angular/router';
 import { DataService } from '../../data-service';
 import { Formation } from '../../interfaces/formation';
-
+import { formations } from '../../lists-load/formations-load';
 @Component({
   selector: 'app-home',
   imports: [RouterModule],
@@ -13,18 +13,27 @@ export class Home implements OnInit{
 
   formations:Formation[]=[];
   categories:string[]=[];
+  aleatoires:Formation[]=[]
 
-  presentations:number[]=[]
   constructor(private dataSvc : DataService,private router:Router){}
 
-  ngOnInit(): void {
-    for (let i = 0; i < 3; i++) {
-    this.presentations[i] = Math.floor(Math.random() * 10) ;
-}
+  ngOnInit(){
 
-    console.log(this.presentations)
+    this.dataSvc.SaveData();
+
+    for (let i = 0; i < 3; i++) {
+    let alea = Math.floor(Math.random() * 10) ;
+    this.aleatoires[i] = formations[alea] ;
+    while(this.aleatoires[i-1] && this.aleatoires[i]==this.aleatoires[i-1]){
+      alea = Math.floor(Math.random() * 10) ;
+      this.aleatoires[i] = formations[alea] ;}
+    }
+
     this.categories=this.dataSvc.GetCategories();
-    this.categories.map(ele=>ele.toUpperCase());
+    this.categories.forEach((ele, index, arr) => {
+    arr[index] = ele.toUpperCase();
+  });
+  
     this.formations=this.dataSvc.GetFormations();
   }
 

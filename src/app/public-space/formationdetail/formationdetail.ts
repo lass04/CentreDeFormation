@@ -3,6 +3,7 @@ import { ActivatedRoute, Router,RouterModule} from '@angular/router';
 import { Formation } from '../../interfaces/formation';
 import { DataService } from '../../data-service';
 import { Session } from '../../interfaces/session';
+import { sessions } from '../../lists-load/sessions-load';
 
 @Component({
   selector: 'app-formationdetail',
@@ -18,13 +19,14 @@ export class Formationdetail implements OnInit{
   constructor(private actRoute:ActivatedRoute,private DataSvc:DataService,private router:Router){}
 
   ngOnInit() {
+    this.DataSvc.GetData();
     const id:string|null=this.actRoute.snapshot.paramMap.get('id');
     if(id!=null){
       this.formation=this.DataSvc.GetFormationById(+id);
      if(this.formation!=undefined){
-      this.sessions=this.DataSvc.GetSessionsByFormation(this.formation);
-      
-    }}
+      this.sessions=this.DataSvc.GetSessionsByFormationId(this.formation.id);
+    }
+  }
     else
       this.router.navigate(['/components/not_found']);
     

@@ -2,6 +2,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
   <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+    <img src="https://iset.uvt.tn/pluginfile.php/1/theme_lambda/logo/1756369462/iset_logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+  </a>
     <a class="navbar-brand fw-bold" style="color: #1E3A8A; font-family: Cambria; font-size: 1.5rem; letter-spacing: 1px;">
       ISETR- Formations
     </a>
@@ -33,26 +36,27 @@
   </section>
 
   <section class="mb-5">
-    <h2 style="color:#1E3A8A; font-family: Cambria;" class="mb-4">Quelques Formations disponibles</h2>
+    <h2 style="color:#1E3A8A; font-family: Cambria;" class="text-center mb-4">Quelques Formations disponibles</h2>
     <div class="table-responsive">
-      <table class="table table-hover table-striped">
+       
+      <table class="container-fluid table table-hover table-bordered table-striped border bg-gradient" style="height:500px;width:800px;">
         <thead class="table-light">
           <tr>
-            <th>Titre</th>
-            <th>Description</th>
-            <th>Durée</th>
+            <th style="background-color:#1E3A8A;color:white">Titre</th>
+            <th style="background-color:#1E3A8A;color:white">Description</th>
+            <th style="background-color:#1E3A8A;color:white">Durée</th>
           </tr>
         </thead>
         <tbody>
-          @for(presentation of presentations; track presentation){
-          <tr style="cursor: pointer;" (click)="goToFormation(formations[presentation].id)">
-            <td class="fw-bold">{{formations[presentation].titre}}</td>
-            <td>{{formations[presentation].description}}</td>
-            <td>{{formations[presentation].chargeHoraire}} h</td>
+          @for(aleatoire of aleatoires; track aleatoire.id){
+          <tr style="cursor: pointer;" (click)="goToFormation(aleatoire.id)">
+            <td class="fw-bold">{{aleatoire.titre}}</td>
+            <td>{{aleatoire.description}}</td>
+            <td>{{aleatoire.chargeHoraire}} h</td>
           </tr>
           }
         </tbody>
-      </table>
+        </table>
     </div>
   </section>
 
@@ -69,5 +73,3 @@
     </div>
   </section>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

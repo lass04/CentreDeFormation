@@ -25,4 +25,5 @@ export class Formationrech implements OnInit{
     this.pristine=false;
     this.formations=this.dataSvc.GetFormationByKeyword(formation.toLowerCase());
   }
+  
 }

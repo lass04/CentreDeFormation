@@ -29,8 +29,7 @@ export class DataService implements OnInit{
     "ia", "machine learning", "algorithmes",
     "design", "ux", "ui", "interfaces"
   ];
-  ngOnInit(): void {
-    this.SaveData();
+  ngOnInit(){
   }
 
   Formations:Formation[]=formations;
@@ -93,56 +92,57 @@ export class DataService implements OnInit{
   // Méthodes de Récupération
 
   GetFormationById(id:number):Formation | undefined{
-    this.getData();
+    this.GetData();
     return this.Formations.find(f=>f.id===id);
   }
 
   GetFormationByKeyword(keyword:string):Formation[] {
-    this.getData();
+    this.GetData();
     return this.Formations.filter(f=>(f.motCles).includes(keyword));
   }
 
   GetFormateurById(id:number):Formateur | undefined{
-    this.getData();
+    this.GetData();
     return this.Formateurs.find(f=>f.id===id);
   }
 
   GetSessionById(id:number):Session | undefined{
-    this.getData();
+    this.GetData();
     return this.Sessions.find(s=>s.id===id);
   }
 
-  GetSessionsByFormation(formation:Formation):Session[]{
-    this.getData();
-    return this.Sessions.filter(s=>s.formation===formation)
+  GetSessionsByFormationId(id:number):Session[]{
+    this.GetData();
+    return this.Sessions.filter(s=>s.formation.id===id)
   }
 
   GetCandidatById(id:number):Candidat | undefined{
-    this.getData();
+    this.GetData();
     return this.Candidats.find(c=>c.id===id);
   }
 
   GetCategories():string[]{
+    this.GetData();
     return [...this.Categories];
   }
 
   GetFormations():Formation[]{
-    this.getData();
+    this.GetData();
     return [...this.Formations];
   }
 
   GetFormateurs():Formateur[]{
-    this.getData();
+    this.GetData();
     return [...this.Formateurs];
   }
 
   GetSessions():Session[]{
-    this.getData();
+    this.GetData();
     return [...this.Sessions];
   }
 
   GetCandidats():Candidat[]{
-    this.getData();
+    this.GetData();
     return [...this.Candidats];
   } 
 
@@ -176,7 +176,7 @@ export class DataService implements OnInit{
     localStorage.setItem('categories',JSON.stringify(this.Categories));
   }
 
-  getData(){
+  GetData(){
     const formations=localStorage.getItem('formations');
     const formateurs=localStorage.getItem('formateurs');
     const sessions=localStorage.getItem('sessions');

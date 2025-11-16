@@ -13,8 +13,9 @@
     <div class="collection">
       
       <a *ngFor="let formation of formations ">
-      <a class="btn" style="background-color:#1E3A8A;margin-bottom: 10px;">
-          {{formation}}
+      <a class="btn" style="background-color:#1E3A8A;margin-bottom: 10px;"
+         [routerLink]="['/public-space/formationdetail', formation.id]">
+          {{formation.titre}}
       </a><br>
       </a>
     </div>

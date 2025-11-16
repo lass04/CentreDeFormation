@@ -20,6 +20,6 @@ export class Formationrech implements OnInit{
   }
 
   Search(formation:string){
-    
+    this.formations=this.dataSvc.GetFormationByKeyword(formation.toLowerCase());
   }
 }

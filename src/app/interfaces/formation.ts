@@ -5,4 +5,5 @@ export interface Formation{
     chargeHoraire:number;
     difficulte:string;
     motCles:string[];
+    pdf:string;
 }

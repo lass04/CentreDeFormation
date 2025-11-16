@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DataService } from '../data-service';
-import { Formation } from '../interfaces/formation';
+import { DataService } from '../../data-service';
+import { Formation } from '../../interfaces/formation';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +17,7 @@ export class Home implements OnInit{
 
   ngOnInit(): void {
     this.categories=this.dataSvc.GetCategories();
+    this.categories.map(ele=>ele.toUpperCase());
     this.formations=this.dataSvc.GetFormations();
   }
 }

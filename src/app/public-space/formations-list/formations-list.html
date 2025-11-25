@@ -1,0 +1,31 @@
+@if (exist) {
+    <app-navbar></app-navbar>
+    <section class="mb-5 mt-5">
+        <h2 style="color:#1E3A8A; font-family: Cambria; text-align:center;" class="mb-4">Formations Disponibles pour la Catégorie {{categorie}}</h2>
+        <div class="table-responsive d-flex justify-content-center">
+            <table class="table table-hover table-striped table-bordered" style="width: 80%; max-width: 800px;">
+                <thead class="bordered" style="background-color:#1E3A8A; color:white;">
+                    <tr>
+                        <th>Titre</th>
+                        <th>Description</th>
+                        <th>Durée</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(formation of formations; track formation.id){
+                    <tr style="cursor: pointer;" [routerLink]="['/public-space/formationdetail',formation.id]">
+                        <td class="fw-bold">{{formation.titre}}</td>
+                        <td>{{formation.description}}</td>
+                        <td>{{formation.chargeHoraire}} H</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+} @else {
+    <app-navbar></app-navbar>
+    <div class="align-item-center"> 
+        <h1 class="mt-5" style="color:#1E3A8A; font-family: Cambria; text-align:center;">Aucune Formations pour cette catégorie</h1>
+    </div>
+}

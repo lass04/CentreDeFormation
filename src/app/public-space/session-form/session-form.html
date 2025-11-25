@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+
+<div class="d-flex align-items-center justify-content-center min-vh-100 bg-light p-3">
+  <div class="card shadow-sm w-100" style="max-width:480px;">
+    <div class="card-body">
+      <h5 class="card-title text-center mb-4" style="font-family:Cambria;color:#1E3A8A;">Inscription</h5>
+
+      <form #SessionForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label class="form-label">Prénom</label>
+          <input type="text" class="form-control" required [(ngModel)]="candidatAssociative['prenom']" name="prenom" #prenom="ngModel">
+          <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="invalid-feedback d-block">
+            Prénom requis.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Nom</label>
+          <input type="text" class="form-control" required [(ngModel)]="candidatAssociative['nom']" name="nom" #nom="ngModel">
+          <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="invalid-feedback d-block">
+            Nom requis.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">CIN</label>
+          <input type="text" class="form-control" required [(ngModel)]="candidatAssociative['cin']" name="cin" #cin="ngModel">
+          <div *ngIf="cin.invalid && (cin.dirty || cin.touched)" class="invalid-feedback d-block">
+            Carte d'identité requise.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" required [(ngModel)]="candidatAssociative['email']" name="email" #email="ngModel">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback d-block">
+            Email valide requis.
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn" style="background-color:#1E3A8A;color:white"
+           [disabled]="!SessionForm.form.valid">
+            S'inscrire
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

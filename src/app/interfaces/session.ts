@@ -1,3 +1,5 @@
+
+import { Candidat } from "./candidat";
 import { Formateur } from "./formateur";
 import { Formation } from "./formation";
 
@@ -7,6 +9,7 @@ export interface Session{
     date_fin:string;
     formateur:Formateur;
     formation:Formation;
-    nbre_inscrits:number;
+    candidats_inscrits:Candidat[];
     description:string;
+    complet:boolean;
 }

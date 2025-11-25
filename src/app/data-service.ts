@@ -1,3 +1,4 @@
+import { candidats } from './lists-load/candidats-load';
 import { Injectable, OnInit } from '@angular/core';
 
 import { Formation } from './interfaces/formation';
@@ -27,8 +28,9 @@ export class DataService implements OnInit{
      "administration", "serveurs",
     "cybersécurité", "sécurité", "réseaux",
     "ia", "machine learning", "algorithmes",
-    "design", "ux", "ui", "interfaces"
+    "ux", "ui", "interfaces"
   ];
+
   ngOnInit(): void {
     this.SaveData();
   }
@@ -36,7 +38,7 @@ export class DataService implements OnInit{
   Formations:Formation[]=formations;
   Formateurs:Formateur[]=formateurs;
   Sessions:Session[]=sessions;
-  Candidats:Candidat[]=[];
+  Candidats:Candidat[]=candidats;
 
 
   // Méthodes de Modification
@@ -112,14 +114,19 @@ export class DataService implements OnInit{
     return this.Sessions.find(s=>s.id===id);
   }
 
-  GetSessionsByFormation(formation:Formation):Session[]{
+  GetSessionsByFormationId(formation:Formation):Session[]{
     this.getData();
-    return this.Sessions.filter(s=>s.formation===formation)
+    return this.Sessions.filter(s=>s.formation.id===formation.id)
   }
 
   GetCandidatById(id:number):Candidat | undefined{
     this.getData();
     return this.Candidats.find(c=>c.id===id);
+  }
+
+  GetCandidatByCin(cin:number):Candidat|undefined{
+    this.getData();
+    return this.Candidats.find(c=>c.cin==cin);
   }
 
   GetCategories():string[]{
@@ -162,12 +169,22 @@ export class DataService implements OnInit{
     this.SaveData();
   }
 
-  AddCandidat(candidat:Candidat){
+  AddNewCandidat(candidat:Candidat){
     this.Candidats.push(candidat);
     this.SaveData();
   }
 
+  AddCandidatToSession(candidat:Candidat,session:Session){
+    const index=this.Sessions.findIndex(s=>s.id===session.id);
+    if(index!==-1){
+      this.Sessions[index].candidats_inscrits.push(candidat);
+      this.SaveData();
+    }
+  }
+
+
   // Méthodes du LocalStorage
+
   SaveData(){
     localStorage.setItem('formations',JSON.stringify(this.Formations));
     localStorage.setItem('formateurs',JSON.stringify(this.Formateurs));

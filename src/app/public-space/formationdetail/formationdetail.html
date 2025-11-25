@@ -1,28 +1,81 @@
 <app-navbar></app-navbar>
 
-<div class="text-center">
-  <h1 style="font-family:Cambria;color:#1E3A8A;margin-top:10px">{{formation?.titre}}</h1><br>
+<div class="container mt-4">
+
+  
+  <div class="p-4 p-md-5 rounded-4"
+       style="
+         border: 3px solid #1E3A8A;
+         box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+       ">
+
+    
+    <div class="text-center mb-4">
+      <h1 style="color:#1E3A8A;font-family:Cambria;">
+        {{formation?.titre}}
+      </h1>
+    </div>
+
+    
+    <h2 style="font-family:Cambria;color:#1E3A8A;">Description</h2>
+    <p class="mb-4">{{formation?.description}}</p>
+
+    
+    <h4 style="font-family:Cambria;color:#1E3A8A;">Durée de la Formation</h4>
+    <p class="mb-4">{{formation?.chargeHoraire}} Heures</p>
+
+    
+    <h3 class="mb-4" style="font-family:Cambria;color:#1E3A8A;">Sessions Disponibles</h3>
+
+    <div class="row justify-content-center">
+      @for(session of sessions ; track session){
+        <div class="col-md-6 col-lg-5 mb-4">
+
+          <div class="card shadow-sm border-0"
+               style="border-radius:12px; border: 1px #1E3A8A1A;">
+
+            <div class="card-body" style="
+         border: 3px solid #1E3A8A;
+         box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+         border-radius: 3px;
+       ">
+
+              <h5 class="card-title text-center mb-3"
+                  style="color:#1E3A8A;font-family:Cambria;">
+                Session {{session.id}}
+              </h5>
+
+              <p>
+                <strong style="color:#1E3A8A;">Formateur :</strong>
+                {{(session.formateur)?.nom}} {{(session.formateur)?.prenom}}
+              </p>
+
+              <p>
+                <strong style="color:#1E3A8A;">Date Début :</strong>
+                {{session?.date_debut}}
+              </p>
+
+              <p>
+                <strong style="color:#1E3A8A;">Date Fin :</strong>
+                {{session.date_fin}}
+              </p>
+
+              <div class="text-center mt-3">
+                <button class="btn px-4 py-2 shadow rounded-pill"
+                        style="color:white;background-color:#1E3A8A;font-weight:bold;"
+                        [routerLink]="['/public-space/sessionform',session.id]">
+                  S'inscrire
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div> 
+
 </div>
-
-<h2 style="font-family:Cambria;color:#1E3A8A">Description </h2>
-<p>{{formation?.description}}</p><br>
-
-<h4 style="font-family:Cambria;color:#1E3A8A">Durée de la Formation</h4>
-<p>{{formation?.chargeHoraire}} Heures</p>
-
-<h3 style="font-family:Cambria;color:#1E3A8A">Sessions Disponibles</h3><br>
-<ul>
-    @for(session of sessions ; track session){
-      <li>Session {{session.id}} , <br>
-       <strong> Formateur : </strong>{{(session.formateur)?.nom}} {{(session.formateur)?.prenom}}  , <br>
-        <strong> Date Début : </strong>{{session?.date_debut}}<br>
-        <strong> Date Fin : </strong> {{session.date_fin}}
-      </li>
-      <button class="btn shadow rounded-pill px-3 py-2"
-       style="background-color:#1E3A8A;color:white;"
-       [routerLink]="['/public-space/sessionform',session.id]">
-       S'inscrire</button><br>
-    }
-</ul>
-
 

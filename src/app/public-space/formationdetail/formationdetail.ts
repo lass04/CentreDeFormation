@@ -33,7 +33,7 @@ export class Formationdetail implements OnInit{
       if(this.formation!=undefined){
       this.sessions=this.DataSvc.GetSessionsByFormationId(this.formation);
       this.sessions.filter(s=>s.complet==true);
-      console.log(this.sessions[0])
+      
     }}
     else
       this.router.navigate(['/components/not_found']);

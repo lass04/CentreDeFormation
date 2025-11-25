@@ -1,13 +1,14 @@
 import { Candidat } from "../interfaces/candidat";
 
 export const candidats: Candidat[] = [
+
   {
     id: 1,
     nom: "Smith",
     prenom: "John",
     email: "john.smith@example.com",
     cin: 12345678,
-    photo: "john_smith.jpg",
+    photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
     motdepasse: "Pass123!"
   },
   {
@@ -16,7 +17,7 @@ export const candidats: Candidat[] = [
     prenom: "Emily",
     email: "emily.johnson@example.com",
     cin: 23456789,
-    photo: "emily_johnson.jpg",
+    photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
     motdepasse: "Pass123!"
   },
   {
@@ -25,7 +26,7 @@ export const candidats: Candidat[] = [
     prenom: "Michael",
     email: "michael.brown@example.com",
     cin: 34567890,
-    photo: "michael_brown.jpg",
+    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
     motdepasse: "Pass123!"
   },
   {
@@ -34,7 +35,7 @@ export const candidats: Candidat[] = [
     prenom: "Sarah",
     email: "sarah.taylor@example.com",
     cin: 45678901,
-    photo: "sarah_taylor.jpg",
+    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
     motdepasse: "Pass123!"
   },
   {
@@ -43,7 +44,7 @@ export const candidats: Candidat[] = [
     prenom: "David",
     email: "david.davis@example.com",
     cin: 56789012,
-    photo: "david_davis.jpg",
+    photo: "https://images.unsplash.com/photo-1527980965255-d3b416303d12",
     motdepasse: "Pass123!"
   },
   {
@@ -52,7 +53,7 @@ export const candidats: Candidat[] = [
     prenom: "Olivia",
     email: "olivia.miller@example.com",
     cin: 67890123,
-    photo: "olivia_miller.jpg",
+    photo: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
     motdepasse: "Pass123!"
   },
   {
@@ -61,7 +62,7 @@ export const candidats: Candidat[] = [
     prenom: "James",
     email: "james.wilson@example.com",
     cin: 78901234,
-    photo: "james_wilson.jpg",
+    photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
     motdepasse: "Pass123!"
   },
   {
@@ -70,7 +71,7 @@ export const candidats: Candidat[] = [
     prenom: "Sophia",
     email: "sophia.moore@example.com",
     cin: 89012345,
-    photo: "sophia_moore.jpg",
+    photo: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f",
     motdepasse: "Pass123!"
   },
   {
@@ -79,7 +80,7 @@ export const candidats: Candidat[] = [
     prenom: "Daniel",
     email: "daniel.anderson@example.com",
     cin: 90123456,
-    photo: "daniel_anderson.jpg",
+    photo: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91",
     motdepasse: "Pass123!"
   },
   {
@@ -88,7 +89,8 @@ export const candidats: Candidat[] = [
     prenom: "Grace",
     email: "grace.thomas@example.com",
     cin: 11223344,
-    photo: "grace_thomas.jpg",
+    photo: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7",
     motdepasse: "Pass123!"
   }
+
 ];

@@ -1,5 +1,4 @@
 import { Navbar } from './../../components/navbar/navbar';
-import { PublicSpaceRoutingModule } from './../public-space-routing-module';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../../services/data-service';
@@ -14,6 +13,8 @@ import { Session } from '../../interfaces/session';
   styleUrl: './session-form.css',
 })
 export class SessionForm implements OnInit{
+
+  // Tableau Associatif pour stocker le candidat à Ajouter à la session
 
   candidatAssociative :{[nom:string]:string}={
     "nom":"",

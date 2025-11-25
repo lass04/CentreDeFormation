@@ -7,19 +7,6 @@ import { RouterModule} from '@angular/router';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements OnInit{
-  
-    ngOnInit() {
-  // Vérifie si la migration a déjà été faite
-  if (!localStorage.getItem('migration_sessions_v2_done')) {
-    
-    // Supprime les anciennes données
-    localStorage.removeItem('sessions');
-
-    // Marque la migration comme faite
-    localStorage.setItem('migration_sessions_v2_done', 'true');
-  }
-}
-
+export class App {
   protected readonly title = signal('CentreDeFormation');
 }

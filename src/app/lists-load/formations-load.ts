@@ -8,7 +8,7 @@ export const formations: Formation[] = [
     chargeHoraire: 20,
     difficulte: "Débutant",
     motCles: ["programmation", "bases", "logique","initiation"],
-    pdf: "programmes/initiation_programmation.pdf",
+    pdf: "assets/pdf/initiation_programmation.pdf",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const formations: Formation[] = [
     chargeHoraire: 35,
     difficulte: "Intermédiaire",
     motCles: ["html", "css", "javascript", "frontend","web","développement"],
-    pdf: "programmes/front_end.pdf",
+    pdf: "assets/pdf/front_end.pdf",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const formations: Formation[] = [
     chargeHoraire: 40,
     difficulte: "Intermédiaire",
     motCles: ["api", "node.js", "express", "backend","web","développement"],
-    pdf: "programmes/back_end.pdf",
+    pdf: "assets/pdf/back_end.pdf",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const formations: Formation[] = [
     chargeHoraire: 25,
     difficulte: "Débutant",
     motCles: ["sql", "base","données", "requêtes"],
-    pdf: "programmes/sql.pdf",
+    pdf: "assets/pdf/sql.pdf",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const formations: Formation[] = [
     chargeHoraire: 45,
     difficulte: "Avancé",
     motCles: ["flutter", "dart", "mobile","développement"],
-    pdf: "programmes/flutter.pdf",
+    pdf: "assets/pdf/flutter.pdf",
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ export const formations: Formation[] = [
     chargeHoraire: 30,
     difficulte: "Intermédiaire",
     motCles: ["linux", "administration", "serveurs","système"],
-    pdf: "programmes/linux_admin.pdf",
+    pdf: "assets/pdf/linux_admin.pdf",
   },
   {
     id: 7,
@@ -62,7 +62,7 @@ export const formations: Formation[] = [
     chargeHoraire: 28,
     difficulte: "Débutant",
     motCles: ["cybersécurité", "sécurité", "réseaux"],
-    pdf: "programmes/cybersecurite.pdf",
+    pdf: "assets/pdf/cybersecurite.pdf",
   },
   {
     id: 8,
@@ -71,7 +71,7 @@ export const formations: Formation[] = [
     chargeHoraire: 50,
     difficulte: "Avancé",
     motCles: ["ia","ai","machine learning", "algorithmes","intelligence","artificielle"],
-    pdf: "programmes/ia_ml.pdf",
+    pdf: "assets/pdf/ia_ml.pdf",
   },
   {
     id: 9,
@@ -80,7 +80,7 @@ export const formations: Formation[] = [
     chargeHoraire: 32,
     difficulte: "Intermédiaire",
     motCles: ["design", "ux", "ui", "interfaces"],
-    pdf: "programmes/ux_ui.pdf",
+    pdf: "assets/pdf/ux_ui.pdf",
   },
   {
     id: 10,
@@ -89,6 +89,6 @@ export const formations: Formation[] = [
     chargeHoraire: 36,
     difficulte: "Intermédiaire",
     motCles: ["réseaux", "tcp/ip", "communication"],
-    pdf: "programmes/reseaux.pdf",
-  },
+    pdf: "assets/pdf/reseaux.pdf",
+  }
 ];

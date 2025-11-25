@@ -1,14 +1,15 @@
 import { Formateur } from "../interfaces/formateur";
 
 export const formateurs: Formateur[] = [
+  
   {
     id: 1,
     nom: "Johnson",
     prenom: "Michael",
     telephone: "+1 202 555 0134",
     cin: 87451236,
-    photo: "photos/johnson_michael.jpg",
-    cv: "cv/johnson_michael.pdf",
+    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    cv: "assets/cv/johnson_michael.pdf",
     specialite: ["programmation", "bases", "logique"],
   },
   {
@@ -17,8 +18,8 @@ export const formateurs: Formateur[] = [
     prenom: "Emily",
     telephone: "+1 202 555 0198",
     cin: 98124563,
-    photo: "photos/smith_emily.jpg",
-    cv: "cv/smith_emily.pdf",
+    photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    cv: "assets/cv/smith_emily.pdf",
     specialite: ["html", "css", "javascript", "frontend"],
   },
   {
@@ -27,8 +28,8 @@ export const formateurs: Formateur[] = [
     prenom: "Christopher",
     telephone: "+1 202 555 0172",
     cin: 72519463,
-    photo: "photos/brown_christopher.jpg",
-    cv: "cv/brown_christopher.pdf",
+    photo: "https://images.unsplash.com/photo-1527980965255-d3b416303d12",
+    cv: "assets/cv/brown_christopher.pdf",
     specialite: ["api", "node.js", "express", "backend"],
   },
   {
@@ -37,8 +38,8 @@ export const formateurs: Formateur[] = [
     prenom: "Olivia",
     telephone: "+1 202 555 0149",
     cin: 65741892,
-    photo: "photos/wilson_olivia.jpg",
-    cv: "cv/wilson_olivia.pdf",
+    photo: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
+    cv: "assets/cv/wilson_olivia.pdf",
     specialite: ["design", "ux", "ui", "interfaces"],
   },
   {
@@ -47,8 +48,8 @@ export const formateurs: Formateur[] = [
     prenom: "James",
     telephone: "+1 202 555 0158",
     cin: 55891476,
-    photo: "photos/anderson_james.jpg",
-    cv: "cv/anderson_james.pdf",
+    photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
+    cv: "assets/cv/anderson_james.pdf",
     specialite: ["linux", "administration", "serveurs"],
   },
   {
@@ -57,8 +58,8 @@ export const formateurs: Formateur[] = [
     prenom: "Sophia",
     telephone: "+1 202 555 0183",
     cin: 44231758,
-    photo: "photos/miller_sophia.jpg",
-    cv: "cv/miller_sophia.pdf",
+    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    cv: "assets/cv/miller_sophia.pdf",
     specialite: ["mobile", "flutter", "dart"],
   },
   {
@@ -67,8 +68,8 @@ export const formateurs: Formateur[] = [
     prenom: "Benjamin",
     telephone: "+1 202 555 0117",
     cin: 33987415,
-    photo: "photos/davis_benjamin.jpg",
-    cv: "cv/davis_benjamin.pdf",
+    photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    cv: "assets/cv/davis_benjamin.pdf",
     specialite: ["ia", "machine learning", "algorithmes"],
   },
   {
@@ -77,8 +78,10 @@ export const formateurs: Formateur[] = [
     prenom: "Charlotte",
     telephone: "+1 202 555 0104",
     cin: 78451293,
-    photo: "photos/thompson_charlotte.jpg",
-    cv: "cv/thompson_charlotte.pdf",
+    photo: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f",
+    cv: "assets/cv/thompson_charlotte.pdf",
     specialite: ["cybersécurité", "sécurité", "réseaux"],
-  },
+  }
 ];
+
+

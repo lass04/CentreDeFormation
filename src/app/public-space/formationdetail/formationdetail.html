@@ -24,7 +24,12 @@
     <h4 style="font-family:Cambria;color:#1E3A8A;">Durée de la Formation</h4>
     <p class="mb-4">{{formation?.chargeHoraire}} Heures</p>
 
-    
+    <div style="text-align:center;">
+    <button style="background-color:#1E3A8A;color:white;" class="btn">
+     <a [href]="formation?.pdf" target="_blank" style="color:white" > Voir le Programme </a>
+    </button>
+    </div>
+
     <h3 class="mb-4" style="font-family:Cambria;color:#1E3A8A;">Sessions Disponibles</h3>
 
     <div class="row justify-content-center">

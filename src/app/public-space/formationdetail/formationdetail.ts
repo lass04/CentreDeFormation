@@ -7,6 +7,7 @@ import { Formation } from '../../interfaces/formation';
 import { DataService } from '../../services/data-service';
 import { Session } from '../../interfaces/session';
 
+
 @Component({
   selector: 'app-formationdetail',
   imports: [RouterModule,Navbar],
@@ -17,6 +18,7 @@ export class Formationdetail implements OnInit{
 
   formation?:Formation;
   sessions:Session[]=[];
+  pdf=false;
 
   constructor(private actRoute:ActivatedRoute,private DataSvc:DataService,private router:Router){}
 

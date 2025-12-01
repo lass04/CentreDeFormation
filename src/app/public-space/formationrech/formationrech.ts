@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { DataService } from '../../data-service';
+import { DataService } from '../../services/data-service';
 import { Formation } from '../../interfaces/formation';
 import { NgForm } from '@angular/forms';
 

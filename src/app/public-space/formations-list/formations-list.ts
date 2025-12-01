@@ -1,5 +1,5 @@
 import { Navbar } from './../../components/navbar/navbar';
-import { DataService } from './../../data-service';
+import { DataService } from '../../services/data-service';
 import { formations } from './../../lists-load/formations-load';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';

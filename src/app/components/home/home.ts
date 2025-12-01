@@ -2,7 +2,7 @@ import { formations } from './../../lists-load/formations-load';
 import { Navbar } from './../navbar/navbar';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule,Router } from '@angular/router';
-import { DataService } from '../../data-service';
+import { DataService } from '../../services/data-service';
 import { Formation } from '../../interfaces/formation';
 
 @Component({

@@ -1,14 +1,14 @@
-import { candidats } from './lists-load/candidats-load';
+import { candidats } from '../lists-load/candidats-load';
 import { Injectable, OnInit } from '@angular/core';
 
-import { Formation } from './interfaces/formation';
-import { Candidat } from './interfaces/candidat';
-import { Session } from './interfaces/session';
-import { Formateur } from './interfaces/formateur';    
+import { Formation } from '../interfaces/formation';
+import { Candidat } from '../interfaces/candidat';
+import { Session } from '../interfaces/session';
+import { Formateur } from '../interfaces/formateur';    
 
-import { formations } from './lists-load/formations-load';
-import { sessions } from './lists-load/sessions-load';
-import { formateurs } from './lists-load/formateurs-load';
+import { formations } from '../lists-load/formations-load';
+import { sessions } from '../lists-load/sessions-load';
+import { formateurs } from '../lists-load/formateurs-load';
 
 
 @Injectable({

@@ -2,7 +2,7 @@ import { Navbar } from './../../components/navbar/navbar';
 import { PublicSpaceRoutingModule } from './../public-space-routing-module';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DataService } from '../../data-service';
+import { DataService } from '../../services/data-service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router ,RouterModule} from '@angular/router';
 import { Session } from '../../interfaces/session';

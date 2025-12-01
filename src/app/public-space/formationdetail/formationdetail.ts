@@ -4,7 +4,7 @@ import { sessions } from './../../lists-load/sessions-load';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router,RouterModule} from '@angular/router';
 import { Formation } from '../../interfaces/formation';
-import { DataService } from '../../data-service';
+import { DataService } from '../../services/data-service';
 import { Session } from '../../interfaces/session';
 
 @Component({

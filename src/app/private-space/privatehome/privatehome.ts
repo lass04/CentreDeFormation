@@ -1,5 +1,6 @@
-import { RouterModule } from '@angular/router';
-import { Component } from '@angular/core';
+import { Authservice } from './../../services/authservice';
+import { Router, RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-privatehome',
@@ -8,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './privatehome.css',
 })
 export class Privatehome {
+  
+  constructor(private authSvc:Authservice,private router: Router){}
+
+ Logout(){
+  this.authSvc.logout();
+  this.router.navigate(['/private-space']);
+ }
 
 }

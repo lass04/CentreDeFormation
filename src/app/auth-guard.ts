@@ -3,6 +3,7 @@ import { CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
 
 export const authGuard: CanActivateFn = (route, state) => {
+
   const authSvc = inject(Authservice);
   const router = inject(Router);
 
@@ -11,5 +12,6 @@ export const authGuard: CanActivateFn = (route, state) => {
   }
   else {
     alert("Connectez-vous en tant qu'Admin !!");
-    return router.navigate(['/private-space']);}
+    return router.navigate(['/private-space']);
+  }
 };

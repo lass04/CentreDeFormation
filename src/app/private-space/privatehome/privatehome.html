@@ -1,5 +1,25 @@
+ <app-privatenavbar></app-privatenavbar>
+  <div class="container mt-5">
+    <ul>
+    <li><label style="font-weight: bold;">Consulter les Formations : </label>
   <button [routerLink]="['/private-space/formations']" class="btn" style="background-color:#1E3A8A;color:white;">Formations</button><br>
+  </li><br>
+
+  <li>
+  <label style="font-weight: bold;">Consulter les Candidats  </label>
   <button  [routerLink]="['/private-space/candidats']"class="btn" style="background-color:#1E3A8A;color:white">Candidats</button><br>
+  </li><br>
+
+  <li>
+  <label style="font-weight: bold;">Consulter les Formateurs  </label>
   <button  [routerLink]="['/private-space/formateurs']" class="btn" style="background-color:#1E3A8A;color:white">Formateurs</button><br>
+  </li><br>
+
+  <li>
+  <label style="font-weight: bold;">Consulter les Sessions  :  </label>
   <button  [routerLink]="['/private-space/sessions']" class="btn" style="background-color:#1E3A8A;color:white">Sessions</button><br>
-  <button (click)="Logout()" class="btn" style="background-color:#1E3A8A;color:white">se déconnecter</button>
+  </li><br>
+
+  </ul>
+  <button (click)="Logout()" class="btn" style="background-color:#1E3A8A;color:white">se déconnecter</button>  
+</div>

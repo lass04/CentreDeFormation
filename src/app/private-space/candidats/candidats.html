@@ -1,1 +1,97 @@
-<p>candidats works!</p>
+
+<app-privatenavbar></app-privatenavbar>
+
+<section class="mb-5">
+    <h2 style="color:#1E3A8A; font-family: Cambria;text-align:center;" class="mb-4 mt-4">Liste des candidats </h2>
+    <button class="btn" ></button>
+    <div class="table-responsive d-flex justify-content-center">
+      <table class="table table-hover table-striped table-bordered" style="width:75%; max-width:900px;">
+        <thead class="bordered" style="background-color:#1E3A8A;color:white">
+          <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Email</th>
+            <th>CIN</th>
+            <th>Mot de passe</th>
+            <th>modification</th>
+            <th>Suppression</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(candidat of candidats; track candidat.id){
+          <tr style="cursor: pointer;">
+            <td class="fw-bold">{{candidat.nom}}</td>
+            <td>{{candidat.prenom}}</td>
+            <td>{{candidat.email}}</td>
+            <td>{{candidat.cin}}</td>
+            <td>{{candidat.motdepasse}}</td>
+            <td><button style="background-color:#1E3A8A;color:white;" class="btn" (click)="Delete(candidat.id)">Supprimer</button></td>
+            <td><button style="background-color:#1E3A8A;color:white;" class="btn" (click)="Update(candidat.id)">Modifier</button></td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    @if(ToUpdate==true){
+        <div class="d-flex align-items-center justify-content-center min-vh-100 bg-light p-3">
+  <div class="card shadow-sm w-100" style="max-width:480px;">
+    <div class="card-body">
+      <h5 class="card-title text-center mb-4" style="font-family:Cambria;color:#1E3A8A;">Modification</h5>
+
+      <form #UpdateCandidatForm="ngForm" (ngSubmit)="OnSubmit()">
+        <div class="mb-3">
+          <label class="form-label">Nom</label>
+          <input type="text" class="form-control" required [(ngModel)]="CandidatToUpdate.nom" name="nom" #nom="ngModel">
+          <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="invalid-feedback d-block">
+            Nom requis.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Prenom</label>
+          <input type="text" class="form-control" required [(ngModel)]="CandidatToUpdate.prenom" name="prenom" #prenom="ngModel">
+          <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="invalid-feedback d-block">
+            Prenom requis.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" required [(ngModel)]="CandidatToUpdate.email" name="email" #email="ngModel">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback d-block">
+            Email valide requis.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">CIN</label>
+          <input type="text" class="form-control" maxlength="8" minlength="8" [(ngModel)]="CandidatToUpdate.cin" name="cin" #cin="ngModel">
+          <div *ngIf="cin.invalid && (cin.dirty || cin.touched)" class="invalid-feedback d-block">
+            Carte d'identité requise.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Mot de Passe</label>
+          <input type="text" class="form-control" required [(ngModel)]="CandidatToUpdate.motdepasse" name="motdepase" #motdepasse="ngModel">
+          <div *ngIf="motdepasse.invalid && (motdepasse.dirty || motdepasse.touched)" class="invalid-feedback d-block">
+            Mot de passe Requis
+          </div>
+        </div>
+
+    
+        <div class="d-grid">
+          <button type="submit" class="btn" style="background-color:#1E3A8A;color:white"
+           [disabled]="!UpdateCandidatForm.form.valid">
+            Modifier
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+    }
+
+
+  </section>

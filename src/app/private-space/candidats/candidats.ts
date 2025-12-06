@@ -32,12 +32,13 @@ export class Candidats implements OnInit{
     let confirmer = confirm("Etes vous sur de supprimer le candidat "+CandidatName);
     if(confirmer){
       this.dataSvc.DeleteCandidat(id);
-      this.router.navigate(['/private-space/cadidats']);
+      this.router.navigate(['/private-space/candidats']);
     }
   }
 
   // Rechercher le candidat By Id , et affecter true à ToUpdate 
   // pour rendre le formulaire visible
+  
   Update(id:number){
      const Search = this.dataSvc.GetCandidatById(id);
      if(Search){
@@ -46,10 +47,10 @@ export class Candidats implements OnInit{
     }
   }
 
+
   OnSubmit(){
     this.dataSvc.UpdateCandidat(this.CandidatToUpdate);
     this.ToUpdate=false;
-    console.log(this.CandidatToUpdate);
   }
 
 }

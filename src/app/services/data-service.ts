@@ -71,6 +71,7 @@ export class DataService implements OnInit{
     }}
 
   // Méthodes de Suppression
+  
   DeleteFormation(id:number){
     this.Formations=this.Formations.filter(f=>f.id!==id);
     this.SaveData();
@@ -154,6 +155,7 @@ export class DataService implements OnInit{
   } 
 
   // Méthodes d'Ajout
+
   AddFormation(formation:Formation){
     this.Formations.push(formation);
     this.SaveData();

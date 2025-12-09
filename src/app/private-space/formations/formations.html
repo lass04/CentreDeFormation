@@ -1,1 +1,90 @@
-<p>formations works!</p>
+<app-privatenavbar></app-privatenavbar>
+
+<section class="mb-5">
+    <h2 style="color:#1E3A8A; font-family: Cambria;text-align:center;" class="mb-4 mt-4">Liste des formations </h2>
+    <button class="btn" ></button>
+    <div class="table-responsive d-flex justify-content-center">
+      <table class="table table-hover table-striped table-bordered" style="width:75%; max-width:900px;">
+        <thead class="bordered" style="background-color:#1E3A8A;color:white">
+          <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Charge Horaire</th>
+            <th>Difficulté</th>
+            <th>Mots Clés</th>
+            <th>Fichier PDF</th>
+            <th>Supprimer</th>
+            <th>Modifier</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(formation of formations; track formation.id){
+          <tr style="cursor: pointer;">
+            <td class="fw-bold">{{formation.titre}}</td>
+            <td>{{formation.description}}</td>
+            <td>{{formation.chargeHoraire}}</td>
+            <td>{{formation.difficulte}}</td>
+            <td>{{formation.motCles}}</td>
+            <td (click)="GoToPDF(formation.id)">PDF</td>
+            <td><button style="background-color:#1E3A8A;color:white;" class="btn" (click)="Delete(formation.id)">Supprimer</button></td>
+            <td><button style="background-color:#1E3A8A;color:white;" class="btn" (click)="Update(formation.id)">Modifier</button></td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    @if(ToUpdate==true){
+        <div class="d-flex align-items-center justify-content-center min-vh-100 bg-light p-3">
+  <div class="card shadow-sm w-100" style="max-width:480px;">
+    <div class="card-body">
+      <h5 class="card-title text-center mb-4" style="font-family:Cambria;color:#1E3A8A;">Modification</h5>
+
+      <form #UpdateFormationForm="ngForm" (ngSubmit)="OnSubmit()">
+        <div class="mb-3">
+          <label class="form-label">Titre</label>
+          <input type="text" class="form-control" required [(ngModel)]="FormationToUpdate.titre" name="titre" #titre="ngModel">
+          <div *ngIf="titre.invalid && (titre.dirty || titre.touched)" class="invalid-feedback d-block">
+            Titre requis.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <input type="text" class="form-control" required [(ngModel)]="FormationToUpdate.description" name="description" #description="ngModel">
+          <div *ngIf="description.invalid && (description.dirty || description.touched)" class="invalid-feedback d-block">
+            Description requise.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Charge Horaire</label>
+          <input type="number" class="form-control" required [(ngModel)]="FormationToUpdate.chargeHoraire" name="chargeHoraire" #chargeHoraire="ngModel">
+          <div *ngIf="chargeHoraire.invalid && (chargeHoraire.dirty || chargeHoraire.touched)" class="invalid-feedback d-block">
+            Charge Horaire requise.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Difficulté</label>
+          <input type="text" class="form-control" [(ngModel)]="FormationToUpdate.difficulte" name="difficulte" #difficulte="ngModel">
+          <div *ngIf="difficulte.invalid && (difficulte.dirty || difficulte.touched)" class="invalid-feedback d-block">
+            Difficulté requise.
+          </div>
+        </div>
+
+    
+        <div class="d-grid">
+          <button type="submit" class="btn" style="background-color:#1E3A8A;color:white"
+           [disabled]="!UpdateFormationForm.form.valid">
+            Modifier
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+    }
+
+
+  </section>

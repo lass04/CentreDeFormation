@@ -34,57 +34,61 @@
       </table>
     </div>
 
-    @if(ToUpdate==true){
-        <div class="d-flex align-items-center justify-content-center min-vh-100 bg-light p-3">
-  <div class="card shadow-sm w-100" style="max-width:480px;">
-    <div class="card-body">
-      <h5 class="card-title text-center mb-4" style="font-family:Cambria;color:#1E3A8A;">Modification</h5>
 
-      <form #UpdateFormationForm="ngForm" (ngSubmit)="OnSubmit()">
-        <div class="mb-3">
-          <label class="form-label">Titre</label>
-          <input type="text" class="form-control" required [(ngModel)]="FormationToUpdate.titre" name="titre" #titre="ngModel">
-          <div *ngIf="titre.invalid && (titre.dirty || titre.touched)" class="invalid-feedback d-block">
-            Titre requis.
-          </div>
-        </div>
+@if(ToUpdate==true){
+    <div class="modal-backdrop d-flex align-items-center justify-content-center"
+         style="position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:1050; padding:1rem;">
+      <div class="card shadow-sm w-100" style="max-width:480px; position:relative;">
+        <button class="btn btn-sm" style="position:absolute; right:0.5rem; top:0.5rem; background:transparent; color:#1E3A8A; border:none;"
+                (click)="ToUpdate=false" aria-label="Fermer">✕</button>
+        <div class="card-body">
+          <h5 class="card-title text-center mb-4" style="font-family:Cambria;color:#1E3A8A;">Modification</h5>
 
-        <div class="mb-3">
-          <label class="form-label">Description</label>
-          <input type="text" class="form-control" required [(ngModel)]="FormationToUpdate.description" name="description" #description="ngModel">
-          <div *ngIf="description.invalid && (description.dirty || description.touched)" class="invalid-feedback d-block">
-            Description requise.
-          </div>
-        </div>
+          <form #UpdateFormationForm="ngForm" (ngSubmit)="OnSubmit()">
+            <div class="mb-3">
+              <label class="form-label">Titre</label>
+              <input type="text" class="form-control" required [(ngModel)]="FormationToUpdate.titre" name="titre" #titre="ngModel">
+              <div *ngIf="titre.invalid && (titre.dirty || titre.touched)" class="invalid-feedback d-block">
+                Titre requis.
+              </div>
+            </div>
 
-        <div class="mb-3">
-          <label class="form-label">Charge Horaire</label>
-          <input type="number" class="form-control" required [(ngModel)]="FormationToUpdate.chargeHoraire" name="chargeHoraire" #chargeHoraire="ngModel">
-          <div *ngIf="chargeHoraire.invalid && (chargeHoraire.dirty || chargeHoraire.touched)" class="invalid-feedback d-block">
-            Charge Horaire requise.
-          </div>
-        </div>
+            <div class="mb-3">
+              <label class="form-label">Description</label>
+              <input type="text" class="form-control" required [(ngModel)]="FormationToUpdate.description" name="description" #description="ngModel">
+              <div *ngIf="description.invalid && (description.dirty || description.touched)" class="invalid-feedback d-block">
+                Description requise.
+              </div>
+            </div>
 
-        <div class="mb-3">
-          <label class="form-label">Difficulté</label>
-          <input type="text" class="form-control" [(ngModel)]="FormationToUpdate.difficulte" name="difficulte" #difficulte="ngModel">
-          <div *ngIf="difficulte.invalid && (difficulte.dirty || difficulte.touched)" class="invalid-feedback d-block">
-            Difficulté requise.
-          </div>
-        </div>
+            <div class="mb-3">
+              <label class="form-label">Charge Horaire</label>
+              <input type="number" class="form-control" required [(ngModel)]="FormationToUpdate.chargeHoraire" name="chargeHoraire" #chargeHoraire="ngModel">
+              <div *ngIf="chargeHoraire.invalid && (chargeHoraire.dirty || chargeHoraire.touched)" class="invalid-feedback d-block">
+                Charge Horaire requise.
+              </div>
+            </div>
 
-    
-        <div class="d-grid">
-          <button type="submit" class="btn" style="background-color:#1E3A8A;color:white"
-           [disabled]="!UpdateFormationForm.form.valid">
-            Modifier
-          </button>
+            <div class="mb-3">
+              <label class="form-label">Difficulté</label>
+              <input type="text" class="form-control" [(ngModel)]="FormationToUpdate.difficulte" name="difficulte" #difficulte="ngModel">
+              <div *ngIf="difficulte.invalid && (difficulte.dirty || difficulte.touched)" class="invalid-feedback d-block">
+                Difficulté requise.
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn" style="background-color:#1E3A8A;color:white"
+               [disabled]="!UpdateFormationForm.form.valid">
+                Modifier
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
-    }
+}
+
 
 
   </section>

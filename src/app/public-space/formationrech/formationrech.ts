@@ -1,3 +1,4 @@
+import { Navbar } from './../../components/navbar/navbar';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -7,7 +8,7 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-formationrech',
-  imports: [RouterModule,CommonModule],
+  imports: [RouterModule,CommonModule,Navbar],
   templateUrl: './formationrech.html',
   styleUrl: './formationrech.css',
 })

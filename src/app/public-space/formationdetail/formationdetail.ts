@@ -1,6 +1,4 @@
 import { Navbar } from './../../components/navbar/navbar';
-import { candidats } from './../../lists-load/candidats-load';
-import { sessions } from './../../lists-load/sessions-load';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router,RouterModule} from '@angular/router';
 import { Formation } from '../../interfaces/formation';

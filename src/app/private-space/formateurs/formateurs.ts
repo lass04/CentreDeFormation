@@ -13,6 +13,7 @@ import { DataService } from '../../services/data-service';
   templateUrl: './formateurs.html',
   styleUrl: './formateurs.css',
 })
+
 export class Formateurs implements OnInit{
 
     FormateurToUpdate: Formateur=formateurs[0];
@@ -45,10 +46,6 @@ export class Formateurs implements OnInit{
         this.FormateurToUpdate = Search;
         this.ToUpdate=true; 
       }
-    }
-
-    GoToCv(id:number){
-      this.router.navigate(['/private-space'])
     }
   
   

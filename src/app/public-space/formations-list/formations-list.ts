@@ -1,3 +1,4 @@
+import { Authservice } from './../../services/authservice';
 import { Navbar } from './../../components/navbar/navbar';
 import { DataService } from '../../services/data-service';
 import { formations } from './../../lists-load/formations-load';
@@ -16,9 +17,12 @@ export class FormationsList implements OnInit{
   formations=formations;
   exist=false;
 
-  constructor(private actRoute : ActivatedRoute,private dataSvc: DataService){}
+  constructor(private actRoute : ActivatedRoute,private dataSvc: DataService,private authSvc:Authservice){}
 
   ngOnInit(){
+
+    this.authSvc.logout();
+
      const cat : string|null = this.actRoute.snapshot.paramMap.get('categorie');
      
      if(cat!=null){

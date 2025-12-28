@@ -1,3 +1,4 @@
+import { Authservice } from './../../services/authservice';
 import { Navbar } from './../../components/navbar/navbar';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -24,9 +25,10 @@ export class SessionForm implements OnInit{
   };
   session?:Session;
 
-  constructor(private DataSvc:DataService,private ActRoute:ActivatedRoute,private router : Router){}
+  constructor(private DataSvc:DataService,private ActRoute:ActivatedRoute,private router : Router,private authSvc:Authservice){}
 
   ngOnInit(){
+
     //Récupérer l'id de la session depuis l'URL
     const id = this.ActRoute.snapshot.paramMap.get('id');
     if(id!=null){

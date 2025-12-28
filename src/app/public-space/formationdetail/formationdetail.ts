@@ -1,3 +1,4 @@
+import { Authservice } from './../../services/authservice';
 import { Navbar } from './../../components/navbar/navbar';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router,RouterModule} from '@angular/router';
@@ -18,10 +19,12 @@ export class Formationdetail implements OnInit{
   sessions:Session[]=[];
   pdf=false;
 
-  constructor(private actRoute:ActivatedRoute,private DataSvc:DataService,private router:Router){}
+  constructor(private actRoute:ActivatedRoute,private DataSvc:DataService,private router:Router,private authSvc:Authservice){}
 
   
   ngOnInit() {
+
+    this.authSvc.logout();
     //Récupérer l'id de la formation à afficher
     const id:string|null=this.actRoute.snapshot.paramMap.get('id');
 

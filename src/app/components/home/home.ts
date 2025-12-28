@@ -1,3 +1,4 @@
+import { Authservice } from './../../services/authservice';
 import { formations } from './../../lists-load/formations-load';
 import { Navbar } from './../navbar/navbar';
 import { Component, OnInit } from '@angular/core';
@@ -17,10 +18,11 @@ export class Home implements OnInit{
   categories:string[]=[];
   presentations:Formation[]=[]
 
-  constructor(private dataSvc : DataService,private router:Router){}
+  constructor(private dataSvc : DataService,private router:Router,private authSvc:Authservice){}
 
   ngOnInit(){
 
+    this.authSvc.logout();
     // Remplissage du tableau avec 3 distinctes formations
 
    for(let i=0;i<3;i++){

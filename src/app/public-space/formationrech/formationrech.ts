@@ -1,10 +1,11 @@
+import { Authservice } from './../../services/authservice';
 import { Navbar } from './../../components/navbar/navbar';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../services/data-service';
 import { Formation } from '../../interfaces/formation';
-import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-formationrech',
@@ -16,9 +17,10 @@ export class Formationrech implements OnInit{
 
   dirty=false;
   formations:Formation[]=[];
-  constructor(private dataSvc : DataService){}
+  constructor(private dataSvc : DataService,private authSvc:Authservice){}
 
   ngOnInit(){
+    this.authSvc.logout();
     this.formations=this.dataSvc.GetFormations();
   }
 

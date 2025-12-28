@@ -22,6 +22,7 @@ export class AdminLogin implements OnInit{
   ngOnInit(){
     this.authSvc.logout();
   }
+  
   onSubmit(){
    if(this.authSvc.verify(this.username,this.password)){
     this.router.navigate(['/private-space/home']);

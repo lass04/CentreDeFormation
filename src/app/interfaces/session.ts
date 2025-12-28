@@ -7,8 +7,8 @@ export interface Session{
     id:number;
     date_debut:string;
     date_fin:string;
-    formateur:Formateur;
-    formation:Formation;
+    formateur:Formateur|any;
+    formation:Formation|any;
     candidats_inscrits:Candidat[];
     description:string;
     complet:boolean;

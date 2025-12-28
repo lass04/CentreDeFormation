@@ -14,11 +14,13 @@ import { formateurs } from '../lists-load/formateurs-load';
 @Injectable({
   providedIn: 'root',
 })
+
 export class DataService implements OnInit{
   
 
 
   Categories:string[]=[
+
     'java','python','linux','communication','finance','trading',
     'marketing','design',"programmation", "bases",
      "logique","html", "css", "javascript", "frontend",
@@ -29,6 +31,7 @@ export class DataService implements OnInit{
     "cybersécurité", "sécurité", "réseaux",
     "ia", "machine learning", "algorithmes",
     "ux", "ui", "interfaces"
+    
   ];
 
   ngOnInit(): void {
@@ -42,6 +45,7 @@ export class DataService implements OnInit{
 
 
   // Méthodes de Modification
+
   UpdateFormation(formation:Formation){
     const index=this.Formations.findIndex(f=>f.id===formation.id);
     if(index!==-1){
@@ -196,6 +200,7 @@ export class DataService implements OnInit{
   }
 
   getData(){
+
     const formations=localStorage.getItem('formations');
     const formateurs=localStorage.getItem('formateurs');
     const sessions=localStorage.getItem('sessions');
@@ -214,4 +219,5 @@ export class DataService implements OnInit{
       this.Candidats=JSON.parse(candidats);
     }
   }
+
 }

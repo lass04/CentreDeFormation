@@ -3,7 +3,7 @@
 
 <section class="mb-5">
     <h2 style="color:#1E3A8A; font-family: Cambria;text-align:center;" class="mb-4 mt-4">Liste des candidats </h2>
-    <button class="btn" ></button>
+    <button class="btn" style="background-color: #1E3A8A;color:white;margin-left: 30px;" (click)="Add()">Ajouter</button>
     <div class="table-responsive d-flex justify-content-center">
       <table class="table table-hover table-striped table-bordered" style="width:75%; max-width:900px;">
         <thead class="bordered" style="background-color:#1E3A8A;color:white">
@@ -45,7 +45,7 @@
             <div class="card-body">
               <h5 class="card-title text-center mb-4" style="font-family:Cambria;color:#1E3A8A;">Modification</h5>
 
-              <form #UpdateCandidatForm="ngForm" (ngSubmit)="OnSubmit()">
+              <form #UpdateCandidatForm="ngForm" (ngSubmit)="OnSubmitUpdate()">
                 <div class="mb-3">
                   <label class="form-label">Nom</label>
                   <input type="text" class="form-control" required [(ngModel)]="CandidatToUpdate.nom" name="nom" #nom="ngModel">
@@ -98,6 +98,75 @@
         </div>
     }
 
+     @if(ToAdd==true){
+        <div class="modal-backdrop d-flex align-items-center justify-content-center"
+             style="position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:1050; padding:1rem;">
+          <div class="card shadow-sm w-100" style="max-width:480px; position:relative;">
+            <button class="btn btn-sm" style="position:absolute; right:0.5rem; top:0.5rem; background:transparent; color:#1E3A8A; border:none;"
+                    (click)="ToAdd=false" aria-label="Fermer">✕</button>
+            <div class="card-body">
+              <h5 class="card-title text-center mb-4" style="font-family:Cambria;color:#1E3A8A;">Ajout</h5>
+
+              <form #AddCandidatForm="ngForm" (ngSubmit)="OnSubmitAdd()">
+                <div class="mb-3">
+                  <label class="form-label">Nom</label>
+                  <input type="text" class="form-control" required [(ngModel)]="CandidatToAdd.nom" name="nom" #nom="ngModel">
+                  <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="invalid-feedback d-block">
+                    Nom requis.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Prenom</label>
+                  <input type="text" class="form-control" required [(ngModel)]="CandidatToAdd.prenom" name="prenom" #prenom="ngModel">
+                  <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="invalid-feedback d-block">
+                    Prenom requis.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" required [(ngModel)]="CandidatToAdd.email" name="email" #email="ngModel">
+                  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback d-block">
+                    Email valide requis.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">CIN</label>
+                  <input type="text" class="form-control" maxlength="8" minlength="8" [(ngModel)]="CandidatToAdd.cin" name="cin" #cin="ngModel">
+                  <div *ngIf="cin.invalid && (cin.dirty || cin.touched)" class="invalid-feedback d-block">
+                    Carte d'identité requise.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+              <label class="form-label">Photo URL</label>
+              <input type="text" class="form-control" required [(ngModel)]="CandidatToAdd.photo" name="photo" #photo="ngModel">
+              <div *ngIf="photo.invalid && (photo.dirty || photo.touched)" class="invalid-feedback d-block">
+                URL de photo Requis
+              </div>
+            </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Mot de Passe</label>
+                  <input type="text" class="form-control" required [(ngModel)]="CandidatToAdd.motdepasse" name="motdepase" #motdepasse="ngModel">
+                  <div *ngIf="motdepasse.invalid && (motdepasse.dirty || motdepasse.touched)" class="invalid-feedback d-block">
+                    Mot de passe Requis
+                  </div>
+                </div>
+
+                <div class="d-grid">
+                  <button type="submit" class="btn" style="background-color:#1E3A8A;color:white"
+                   [disabled]="!AddCandidatForm.form.valid">
+                    Ajouter
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    }
 
 
   </section>

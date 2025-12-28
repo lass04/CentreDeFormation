@@ -1,9 +1,11 @@
 <app-privatenavbar></app-privatenavbar>
 
 <section class="mb-5">
+
     <h2 style="color:#1E3A8A; font-family: Cambria;text-align:center;" class="mb-4 mt-4">Liste des formations </h2>
-    <button class="btn" ></button>
-    <div class="table-responsive d-flex justify-content-center">
+    <button class="btn" style="background-color: #1E3A8A;color:white;margin-left: 30px;" (click)="Add()">Ajouter</button>
+   
+   <br><br> <div class="table-responsive d-flex justify-content-center">
       <table class="table table-hover table-striped table-bordered" style="width:75%; max-width:900px;">
         <thead class="bordered" style="background-color:#1E3A8A;color:white">
           <tr>
@@ -25,7 +27,7 @@
             <td>{{formation.chargeHoraire}}</td>
             <td>{{formation.difficulte}}</td>
             <td>{{formation.motCles}}</td>
-            <td (click)="GoToPDF(formation.id)">PDF</td>
+            <td><a [href]="formation.pdf" target="_blank"><button class="btn" style="background-color: #1E3A8A;color:white">PDF</button></a></td>
             <td><button style="background-color:#1E3A8A;color:white;" class="btn" (click)="Delete(formation.id)">Supprimer</button></td>
             <td><button style="background-color:#1E3A8A;color:white;" class="btn" (click)="Update(formation.id)">Modifier</button></td>
           </tr>
@@ -44,7 +46,7 @@
         <div class="card-body">
           <h5 class="card-title text-center mb-4" style="font-family:Cambria;color:#1E3A8A;">Modification</h5>
 
-          <form #UpdateFormationForm="ngForm" (ngSubmit)="OnSubmit()">
+          <form #UpdateFormationForm="ngForm" (ngSubmit)="OnSubmitUpdate()">
             <div class="mb-3">
               <label class="form-label">Titre</label>
               <input type="text" class="form-control" required [(ngModel)]="FormationToUpdate.titre" name="titre" #titre="ngModel">
@@ -89,6 +91,65 @@
     </div>
 }
 
+@if(ToAdd==true){
+    <div class="modal-backdrop d-flex align-items-center justify-content-center"
+         style="position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:1050; padding:1rem;">
+      <div class="card shadow-sm w-100" style="max-width:480px; position:relative;">
+        <button class="btn btn-sm" style="position:absolute; right:0.5rem; top:0.5rem; background:transparent; color:#1E3A8A; border:none;"
+                (click)="ToAdd=false" aria-label="Fermer">✕</button>
+        <div class="card-body">
+          <h5 class="card-title text-center mb-4" style="font-family:Cambria;color:#1E3A8A;">Ajout</h5>
+
+          <form #AddFormationForm="ngForm" (ngSubmit)="OnSubmitAdd()">
+            <div class="mb-3">
+              <label class="form-label">Titre</label>
+              <input type="text" class="form-control" required [(ngModel)]="FormationToAdd.titre" name="titre" #titre="ngModel">
+              <div *ngIf="titre.invalid && (titre.dirty || titre.touched)" class="invalid-feedback d-block">
+                Titre requis.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Description</label>
+              <input type="text" class="form-control" required [(ngModel)]="FormationToAdd.description" name="description" #description="ngModel">
+              <div *ngIf="description.invalid && (description.dirty || description.touched)" class="invalid-feedback d-block">
+                Description requise.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Charge Horaire</label>
+              <input type="number" class="form-control" required [(ngModel)]="FormationToAdd.chargeHoraire" name="chargeHoraire" #chargeHoraire="ngModel">
+              <div *ngIf="chargeHoraire.invalid && (chargeHoraire.dirty || chargeHoraire.touched)" class="invalid-feedback d-block">
+                Charge Horaire requise.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Difficulté</label>
+              <input type="text" class="form-control" [(ngModel)]="FormationToAdd.difficulte" name="difficulte" #difficulte="ngModel">
+              <div *ngIf="difficulte.invalid && (difficulte.dirty || difficulte.touched)" class="invalid-feedback d-block">
+                Difficulté requise.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">PDF de la formation</label>
+              <input type="file" class="form-control" (change)="OnFileSelected($event)" name="pdf">
+              <p *ngIf="PdfFile">Selected: {{ PdfFile }}</p>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn" style="background-color:#1E3A8A;color:white"
+               [disabled]="!AddFormationForm.form.valid">
+                Ajouter
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+}
 
 
   </section>

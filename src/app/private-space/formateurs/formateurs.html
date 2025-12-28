@@ -2,7 +2,8 @@
 
 <section class="mb-5">
     <h2 style="color:#1E3A8A; font-family: Cambria;text-align:center;" class="mb-4 mt-4">Liste des formateurs </h2>
-    <button class="btn" ></button>
+
+    <button class="btn" style="background-color: #1E3A8A;color:white;margin-left: 30px;" (click)="Add()">Ajouter</button>
     <div class="table-responsive d-flex justify-content-center">
       <table class="table table-hover table-striped table-bordered" style="width:85%; max-width:1000px;">
         <thead class="bordered" style="background-color:#1E3A8A;color:white">
@@ -13,7 +14,6 @@
             <th>CIN</th>
             <th>Photo</th>
             <th>CV</th>
-            <th>Spécialités</th>
             <th>Modifier</th>
             <th>Supprimer</th>
           </tr>
@@ -33,7 +33,6 @@
               </button>
             </td>
             
-            <td>{{formateur.specialite}} </td>
             <td><button style="background-color:#1E3A8A;color:white;" class="btn" (click)="Delete(formateur.id)">Supprimer</button></td>
             <td><button style="background-color:#1E3A8A;color:white;" class="btn" (click)="Update(formateur.id)">Modifier</button></td>
           </tr>
@@ -52,7 +51,7 @@
         <div class="card-body">
           <h5 class="card-title text-center mb-4" style="font-family:Cambria;color:#1E3A8A;">Modification</h5>
 
-          <form #UpdateFormateurForm="ngForm" (ngSubmit)="OnSubmit()">
+          <form #UpdateFormateurForm="ngForm" (ngSubmit)="OnSubmitUpdate()">
             <div class="mb-3">
               <label class="form-label">Nom</label>
               <input type="text" class="form-control" required [(ngModel)]="FormateurToUpdate.nom" name="nom" #nom="ngModel">
@@ -97,6 +96,74 @@
               <button type="submit" class="btn" style="background-color:#1E3A8A;color:white"
                [disabled]="!UpdateFormateurForm.form.valid">
                 Modifier
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+}
+
+  @if(ToAdd==true){
+    <div class="modal-backdrop d-flex align-items-center justify-content-center"
+         style="position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:1050; padding:1rem;">
+      <div class="card shadow-sm w-100" style="max-width:480px; position:relative;">
+        <button class="btn btn-sm" style="position:absolute; right:0.5rem; top:0.5rem; background:transparent; color:#1E3A8A; border:none;"
+                (click)="ToAdd=false" aria-label="Fermer">✕</button>
+        <div class="card-body">
+          <h5 class="card-title text-center mb-4" style="font-family:Cambria;color:#1E3A8A;">Ajout</h5>
+
+          <form #AddFormateurForm="ngForm" (ngSubmit)="OnSubmitAdd()">
+            <div class="mb-3">
+              <label class="form-label">Nom</label>
+              <input type="text" class="form-control" required [(ngModel)]="FormateurToAdd.nom" name="nom" #nom="ngModel">
+              <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="invalid-feedback d-block">
+                Nom requis.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Prenom</label>
+              <input type="text" class="form-control" required [(ngModel)]="FormateurToAdd.prenom" name="prenom" #prenom="ngModel">
+              <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="invalid-feedback d-block">
+                Prenom requis.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Telephone</label>
+              <input type="text" class="form-control" required [(ngModel)]="FormateurToAdd.telephone" name="telephone" #telephone="ngModel">
+              <div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)" class="invalid-feedback d-block">
+                Email valide requis.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">CIN</label>
+              <input type="text" class="form-control" maxlength="8" minlength="8" [(ngModel)]="FormateurToAdd.cin" name="cin" #cin="ngModel">
+              <div *ngIf="cin.invalid && (cin.dirty || cin.touched)" class="invalid-feedback d-block">
+                Carte d'identité requise.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Photo URL</label>
+              <input type="text" class="form-control" required [(ngModel)]="FormateurToAdd.photo" name="photo" #photo="ngModel">
+              <div *ngIf="photo.invalid && (photo.dirty || photo.touched)" class="invalid-feedback d-block">
+                URL de photo Requis
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Fichier du CV</label>
+              <input type="file" class="form-control" required[(ngModel)]="FormateurToAdd.cv" (change)="OnFileSelected($event)" name="cv">
+              <p *ngIf="CvFile">Selected: {{ CvFile }}</p>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn" style="background-color:#1E3A8A;color:white"
+               [disabled]="!AddFormateurForm.form.valid">
+                Ajouter
               </button>
             </div>
           </form>

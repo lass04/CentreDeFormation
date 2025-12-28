@@ -15,6 +15,7 @@ import { candidats } from '../../lists-load/candidats-load';
 })
 export class Candidats implements OnInit{
 
+  ToAdd=false;
   CandidatToUpdate:Candidat=candidats[0];
   ToUpdate:boolean=false;
   candidats:Candidat[]=[];
@@ -47,8 +48,26 @@ export class Candidats implements OnInit{
     }
   }
 
+  Add(){
+      this.ToAdd = true;
+    }
 
-  OnSubmit(){
+    CandidatToAdd:Candidat={
+      id:this.candidats.length+1,
+      nom:"",
+      prenom:"",
+      email:"",
+      cin:0,
+      photo:"",
+      motdepasse:""
+    }
+
+    OnSubmitAdd(){
+      this.dataSvc.AddNewCandidat(this.CandidatToAdd);
+      this.ToAdd=false;
+    }
+
+  OnSubmitUpdate(){
     this.dataSvc.UpdateCandidat(this.CandidatToUpdate);
     this.ToUpdate=false;
   }

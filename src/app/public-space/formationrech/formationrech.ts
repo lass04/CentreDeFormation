@@ -14,7 +14,7 @@ import { NgForm } from '@angular/forms';
 })
 export class Formationrech implements OnInit{
 
-  pristine:boolean=true;
+  dirty=false;
   formations:Formation[]=[];
   constructor(private dataSvc : DataService){}
 
@@ -22,8 +22,8 @@ export class Formationrech implements OnInit{
     this.formations=this.dataSvc.GetFormations();
   }
 
-  Search(formation:string){
-    this.pristine=false;
-    this.formations=this.dataSvc.GetFormationByKeyword(formation.toLowerCase());
+  Search(keyWord:string){
+    this.dirty=true;
+    this.formations=this.dataSvc.GetFormationByKeyword(keyWord.toLowerCase());
   }
 }

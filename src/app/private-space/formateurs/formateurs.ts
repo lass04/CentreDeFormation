@@ -14,17 +14,16 @@ import { DataService } from '../../services/data-service';
   styleUrl: './formateurs.css',
 })
 
-export class Formateurs implements OnInit{
+export class Formateurs {
 
-    FormateurToUpdate: Formateur=formateurs[0];
+  
+    FormateurToUpdate: Formateur=formateurs[0];  
     ToUpdate:boolean=false;
-    formateurs:Formateur[]=[];
+    ToAdd=false;
+    formateurs=formateurs;
   
     constructor(private router:Router,private dataSvc:DataService){}
   
-    ngOnInit(){
-      this.formateurs = this.dataSvc.GetFormateurs();
-    }
   
     // Suppression du candidat conçerné
   
@@ -47,12 +46,42 @@ export class Formateurs implements OnInit{
         this.ToUpdate=true; 
       }
     }
+
+    // Affiche le formulaire d'ajout
+    Add(){
+      this.ToAdd = true;
+    }
   
+  FormateurToAdd :Formateur = {
+      id:this.formateurs.length+1,
+      nom:"",
+      prenom:"",
+      telephone:"",
+      cin:0,
+      photo:""
+    }
+
+    OnSubmitAdd(){
+      this.dataSvc.AddFormateur(this.FormateurToAdd);
+      this.ToAdd=false;
+    }
+
+
+    CvFile=""
+    OnFileSelected(event: any) {
   
-    OnSubmit(){
+      const file: File = event.target.files[0];
+    
+      if (file) {
+        this.CvFile = file.name;
+        console.log(this.CvFile);
+    }
+   }
+
+    OnSubmitUpdate(){
       this.dataSvc.UpdateFormateur(this.FormateurToUpdate);
       this.ToUpdate=false;
-      
+      this.ToAdd=false;
     }
   
 }

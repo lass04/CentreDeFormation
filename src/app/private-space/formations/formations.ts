@@ -4,26 +4,25 @@ import { Privatenavbar } from './../../components/privatenavbar/privatenavbar';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Formation } from '../../interfaces/formation';
 
 @Component({
   selector: 'app-formations',
-  imports: [CommonModule,FormsModule,Privatenavbar],
+  imports: [CommonModule, FormsModule, Privatenavbar],
   templateUrl: './formations.html',
   styleUrl: './formations.css',
 })
-export class Formations implements OnInit {
+export class Formations {
   
+  ToAdd=false;
   ToUpdate=false;
-  formations:Formation[]=[];
+  formations=formations;
   FormationToUpdate=formations[0];
+  
 
   constructor(private router:Router,private dataSvc: DataService){}
   
-  ngOnInit(){
-    this.formations = this.dataSvc.GetFormations();
-  }
 
   Update(id:number){
     this.ToUpdate = true;
@@ -43,7 +42,37 @@ export class Formations implements OnInit {
     this.router.navigate(['/private-space/pdf',id]);
   }
 
-  OnSubmit(){
+  Add(){
+      this.ToAdd = true;
+    }
+
+    PdfFile=""
+    OnFileSelected(event: any) {
+  
+      const file: File = event.target.files[0];
+    
+      if (file) {
+        this.PdfFile = file.name;
+    }
+   }
+
+   FormationToAdd={
+    id:this.formations.length+1,
+    titre : "",
+    description:"",
+    chargeHoraire:0,
+    difficulte:"",
+    motCles:[""]
+  }
+
+  OnSubmitAdd(){
+    this.FormationToAdd.motCles=this.motCles.split(",");
+    this.dataSvc.AddFormation(this.FormationToAdd);
+    this.ToAdd = false;
+  }
+
+  motCles="";
+  OnSubmitUpdate(){
     this.dataSvc.UpdateFormation(this.FormationToUpdate);
     this.ToUpdate = false;
   }

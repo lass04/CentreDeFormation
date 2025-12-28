@@ -13,17 +13,16 @@ import { Session } from '../../interfaces/session';
   templateUrl: './sessions.html',
   styleUrl: './sessions.css',
 })
-export class Sessions implements OnInit{
 
+export class Sessions {
+
+  ToAdd=false;
   ToUpdate = false;
   SessionToUpdate=sessions[0];
-  sessions:Session[]=[];
+  sessions=sessions;
 
   constructor(private router:Router,private dataSvc: DataService){}
   
-  ngOnInit(){
-    this.sessions = this.dataSvc.GetSessions();
-  }
 
   Delete(id:number){
     let confirmer = confirm("Etes-vous sur de supprimer ?");
@@ -40,7 +39,36 @@ export class Sessions implements OnInit{
     }
   }
 
-  OnSubmit(){
+  Add(){
+      this.ToAdd = true;
+    }
+
+    SessionToAdd :Session = {
+      id:this.sessions.length+1,
+      date_debut:"",
+      date_fin:"",
+      formateur:0,
+      formation:0,
+      description:"",
+      candidats_inscrits:[],
+      complet:false
+    }
+
+  OnSubmitAdd(){
+    let LinkFormateur=this.dataSvc.GetFormateurById(this.SessionToAdd.formateur);
+    if(LinkFormateur)
+      this.SessionToAdd.formateur=LinkFormateur;
+
+    let LinkFormation=this.dataSvc.GetFormationById(this.SessionToAdd.formation);
+    if(LinkFormation)
+      this.SessionToAdd.formateur=LinkFormation;
+    
+    this.dataSvc.AddSession(this.SessionToAdd)
+    this.ToAdd = false;
+  }
+
+
+  OnSubmitUpdate(){
     this.dataSvc.UpdateSession(this.SessionToUpdate)
     this.ToUpdate = false;
   }

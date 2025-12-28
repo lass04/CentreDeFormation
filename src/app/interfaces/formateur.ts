@@ -5,6 +5,5 @@ export interface Formateur{
     telephone:string;
     cin:number;
     photo:string;
-    cv:string;
-    specialite:string[];
+    cv?:string;
 }
